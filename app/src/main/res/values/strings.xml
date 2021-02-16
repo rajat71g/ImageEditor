@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PhotoEditorApp</string>
+    <string name="info">Info</string>
+    <string name="open">Open</string>
+    <string name="save">Save</string>
+    <string name="crop">Crop</string>
+    <string name="vertical">Vertical</string>
+    <string name="horizontal">Horizontal</string>
+</resources>
