@@ -1,109 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="381dp"
-        android:layout_height="554dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.129"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.photoeditorapp.MainActivityViewModel" />
+    </data>
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="479dp"
-        android:layout_height="152dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.623"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.846">
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
-        <Button
-            android:id="@+id/open"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:text="@string/open"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/save"
-            app:layout_constraintHorizontal_bias="0.0"
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="408dp"
+            android:layout_height="667dp"
+            android:contentDescription="Test"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.183" />
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
-        <Button
-            android:id="@+id/save"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="2dp"
-            android:text="@string/save"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/info"
-            app:layout_constraintStart_toEndOf="@+id/open"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.183" />
-
-        <Button
-            android:id="@+id/info"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="8dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="411dp"
+            android:layout_height="105dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="16dp"
-            android:text="@string/info"
-            app:layout_constraintBottom_toTopOf="@+id/verticalFlip"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/save"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/crop"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="9dp"
-            android:text="@string/crop"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/horizontalFlip"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.836" />
-
-        <Button
-            android:id="@+id/horizontalFlip"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:text="@string/horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/verticalFlip"
-            app:layout_constraintStart_toEndOf="@+id/crop"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.836" />
-
-        <Button
-            android:id="@+id/verticalFlip"
-            android:layout_width="130dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="7dp"
-            android:text="@string/vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/horizontalFlip"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.836" />
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/open"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/open"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                app:layout_constraintEnd_toStartOf="@+id/info"
+                app:layout_constraintStart_toEndOf="@+id/open"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/info"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/info"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/crop"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/crop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/horizontalFlip"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/open" />
+
+            <Button
+                android:id="@+id/horizontalFlip"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/verticalFlip"
+                app:layout_constraintStart_toEndOf="@+id/crop"
+                app:layout_constraintTop_toBottomOf="@id/save"
+                app:layout_constraintVertical_bias="0.555" />
+
+            <Button
+                android:id="@+id/verticalFlip"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:text="@string/vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/horizontalFlip"
+                app:layout_constraintTop_toBottomOf="@id/info" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
